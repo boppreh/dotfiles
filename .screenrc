@@ -1,0 +1,14 @@
+hardstatus on
+hardstatus alwayslastline '%{= kG}%-Lw%{= kW}%50> %n%f* %t%{= kG}%+Lw%< %{= kG}%-=%c %{-}'
+
+startup_message off
+
+multiuser on
+
+shell zsh
+nonblock on
+altscreen on
+nethack on
+
+bind s
+escape ^Oo
