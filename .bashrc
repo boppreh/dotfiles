@@ -70,7 +70,7 @@ fi
 PS1="\w> "
 
 alias ll='ls -lh'
-alias la='ls -Ah'
+alias la='ls -lAh'
 alias l='ls -CF'
 
 PYTHONSTARTUP=~/.pythonrc.py
