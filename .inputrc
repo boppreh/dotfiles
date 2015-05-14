@@ -3,7 +3,7 @@
 # Last Modified: $Date: 2007-11-25 01:53:32 -0700 (Sun, 25 Nov 2007) $
 
 # Woo!
-set editing-mode vi
+#set editing-mode vi
 
 # Adds punctuation as word delimiters
 set bind-tty-special-chars off
@@ -43,4 +43,4 @@ $endif
 
 # IPython needs this to appear at the bottom of the
 # file for clear-screen to work
-set keymap vi
+#set keymap vi
