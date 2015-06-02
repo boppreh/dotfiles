@@ -43,7 +43,7 @@
     inoremap <Leader><Leader> <Esc>`^
 
     " Replace word pattern under cursor.
-    nnoremap <Leader>* :%s/\<<C-r><C-w>\>//g<Left><Left>
+    nnoremap <Leader>* :%s/\<<C-r><C-w>\>//<Left>
 
     " Load and save sessions globally.
     nnoremap <Leader>l :source ~/session.vim<CR>
