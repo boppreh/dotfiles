@@ -1,1 +1,1 @@
-ls -a | grep ^\\.[^.] | grep -v git | xargs -I '{}' ln -s `pwd`/{} ~/{}
+find . -maxdepth 1 -name ".*" -not -type d | xargs -I '{}' ln -v -s `pwd`/{} ~/{}
