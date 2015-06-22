@@ -1,0 +1,9 @@
+# Vim swap files.
+*.swp
+
+# Python compiled objects.
+*.pyc
+__pycache__/
+
+# Test C/C++ files.
+a.out
