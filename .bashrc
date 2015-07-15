@@ -73,4 +73,15 @@ alias ll='ls -lh'
 alias la='ls -lAh'
 alias l='ls -CF'
 
+alias install='sudo dnf install -y'
+function clone {
+    ( cd ~/ && git clone git@github.com:boppreh/$1 )
+}
+
 PYTHONSTARTUP=~/.pythonrc.py
+
+export GOPATH=$HOME/go
+
+if [ -z "$STY" ]; then
+    exec screen -xRRU
+fi
