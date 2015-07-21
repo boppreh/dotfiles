@@ -12,3 +12,7 @@ nethack on
 
 bind s
 escape ^Oo
+
+# Use the scrollback buffer.
+termcapinfo xterm ti@:te@
+
