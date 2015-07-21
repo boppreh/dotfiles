@@ -1,1 +1,1 @@
-nnoremap <leader>r :wa \| !clang -Wall % && ./a.out && rm a.out<CR>
+nnoremap <leader>r :wa \| !clear && clang -Wall % && ./a.out && rm a.out<CR>
