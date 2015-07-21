@@ -5,3 +5,7 @@
 	default = simple
 [core]
 	excludesfile = /home/boppreh/.gitignore
+[format]
+	pretty = format:%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s
+[log]
+	date = relative
