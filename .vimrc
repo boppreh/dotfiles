@@ -75,11 +75,6 @@
 " </ LEADER MAPS >
 
 
-" < SPELL CHECKING>
-    set spell spelllang=en_us
-" </ SPELL CHECKING
-
-
 " < SAVING >
     " Save on focus lost.
     au FocusLost * silent! :wa
@@ -187,7 +182,7 @@
 
     " Limit lines to 79 characters when in insert mode. Lines are automatically
     " broken on first whitespace.
-    set textwidth=79
+    " set textwidth=79
 
     " Automatically format text and comments.
     set formatoptions=tc
@@ -216,6 +211,10 @@
             " Highlights current line. Only in gvim because vim's cursor line
             " is ugly.
             set cursorline
+
+            " Enable spellcheck. On console it just changes the word
+            " background, making it almost impossible to read.
+            set spell spelllang=en_us
 
             " Maximize gvim.
             if has("win32") || has("win64")
