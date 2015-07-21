@@ -73,6 +73,9 @@ alias ll='ls -lh'
 alias la='ls -lAh'
 alias l='ls -CF'
 
+alias e='emacs'
+alias v='vim'
+
 alias install='sudo dnf install -y'
 function clone {
     ( cd ~/ && git clone git@github.com:boppreh/$1 )
