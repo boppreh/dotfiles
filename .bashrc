@@ -14,6 +14,9 @@ shopt -s histappend
 HISTSIZE=1000
 HISTFILESIZE=2000
 
+# save history after every command and not only on bash exit
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
@@ -73,6 +76,8 @@ alias ll='ls -lh'
 alias la='ls -lAh'
 alias l='ls -CF'
 
+alias timestamp='ts "[%Y-%m-%d %H:%M:%.S]"'
+
 alias e='emacs'
 alias v='vim'
 
@@ -84,6 +89,8 @@ function clone {
 PYTHONSTARTUP=~/.pythonrc.py
 
 export GOPATH=$HOME/go
+
+export EDITOR=vim
 
 if [ -z "$STY" ]; then
     exec screen -xRRU
