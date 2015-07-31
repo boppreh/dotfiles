@@ -1,1 +1,1 @@
-nnoremap <leader>r :wa \| !clear && python3 %<CR>
+nnoremap <buffer> <leader>r :wa \| !clear && python3 %<CR>
