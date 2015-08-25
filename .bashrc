@@ -80,6 +80,7 @@ alias timestamp='ts "[%Y-%m-%d %H:%M:%.S]"'
 
 alias e='emacs'
 alias v='vim'
+alias p='python3'
 
 alias install='sudo dnf install -y'
 function clone {
