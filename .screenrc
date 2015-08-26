@@ -5,10 +5,14 @@ startup_message off
 
 multiuser on
 
-shell zsh
+#defshell -bash
 nonblock on
 altscreen on
 nethack on
 
 bind s
 escape ^Oo
+
+# Use the scrollback buffer.
+termcapinfo xterm ti@:te@
+
