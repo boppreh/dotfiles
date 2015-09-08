@@ -1,1 +1,1 @@
-find . -maxdepth 1 -name ".*" -not -type d | xargs -I '{}' ln -v -s `pwd`/{} ~/{}
+find . -maxdepth 1 -name ".*" -not -type d | xargs -I '{}' ln -vsf `pwd`/{} ~/{}
