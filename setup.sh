@@ -1,1 +1,1 @@
-find . -maxdepth 1 -name ".*" -not -type d | xargs -I '{}' ln -v -s `pwd`/{} ~/{}
+ls -a | grep -P '^\.(?!git$)\w' | xargs -I '{}' ln -vs `realpath {}` `realpath ~/{}`
