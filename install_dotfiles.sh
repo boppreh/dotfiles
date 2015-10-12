@@ -1,1 +1,9 @@
-ls -a | grep -P '^\.(?!git$)\w' | xargs -I '{}' ln -vs `realpath {}` `realpath ~/{}`
+ln -vs "`pwd`/.bash_profile" $HOME/
+ln -vs "`pwd`/.bashrc" $HOME/
+ln -vs "`pwd`/.gitconfig" $HOME/
+ln -vs "`pwd`/.gitignore" $HOME/
+ln -vs "`pwd`/.inputrc" $HOME/
+ln -vs "`pwd`/.pythonrc.py" $HOME/
+ln -vs "`pwd`/.screenrc" $HOME/
+ln -vs "`pwd`/.vim" $HOME/
+ln -vs "`pwd`/.vimrc" $HOME/
