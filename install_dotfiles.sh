@@ -7,3 +7,6 @@ ln -vsf "`pwd`/.pythonrc.py" $HOME/
 ln -vsf "`pwd`/.screenrc" $HOME/
 ln -vsf "`pwd`/.vim" $HOME/
 ln -vsf "`pwd`/.vimrc" $HOME/
+if hash startx 2>/dev/null; then
+    ln -vsf "`pwd`/user" $HOME/.config/dconf
+fi
