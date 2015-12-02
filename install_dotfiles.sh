@@ -1,9 +1,12 @@
-ln -vs "`pwd`/.bash_profile" $HOME/
-ln -vs "`pwd`/.bashrc" $HOME/
-ln -vs "`pwd`/.gitconfig" $HOME/
-ln -vs "`pwd`/.gitignore" $HOME/
-ln -vs "`pwd`/.inputrc" $HOME/
-ln -vs "`pwd`/.pythonrc.py" $HOME/
-ln -vs "`pwd`/.screenrc" $HOME/
-ln -vs "`pwd`/.vim" $HOME/
-ln -vs "`pwd`/.vimrc" $HOME/
+ln -vsf "`pwd`/.bash_profile" $HOME/
+ln -vsf "`pwd`/.bashrc" $HOME/
+ln -vsf "`pwd`/.gitconfig" $HOME/
+ln -vsf "`pwd`/.gitignore" $HOME/
+ln -vsf "`pwd`/.inputrc" $HOME/
+ln -vsf "`pwd`/.pythonrc.py" $HOME/
+ln -vsf "`pwd`/.screenrc" $HOME/
+ln -vsf "`pwd`/.vim" $HOME/
+ln -vsf "`pwd`/.vimrc" $HOME/
+if hash startx 2>/dev/null; then
+    ln -vsf "`pwd`/user" $HOME/.config/dconf
+fi
