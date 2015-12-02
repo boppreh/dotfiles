@@ -10,6 +10,7 @@ else
 fi
 sudo $MANAGER update
 sudo $MANAGER -y install screen vim git golang jq python3
+sudo $MANAGER -y install glances || sudo pip3 install glances
 
 mkdir temp
 cd temp
