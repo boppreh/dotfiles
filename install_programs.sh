@@ -9,8 +9,8 @@ else
     exit 1
 fi
 sudo $MANAGER update
-sudo $MANAGER -y install screen vim git golang jq python3
-sudo $MANAGER -y install glances || sudo pip3 install glances
+sudo $MANAGER -y install screen vim git golang python3
+sudo $MANAGER -y install jq
 
 mkdir temp
 cd temp
@@ -56,4 +56,4 @@ cd ..
 sudo rm -rf ./temp
 
 sudo pip3 install --upgrade pip
-sudo pip3 install requests pyparsing flask
+sudo pip3 install requests pyparsing flask glances
