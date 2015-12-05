@@ -1,7 +1,5 @@
 [user]
 	email = boppreh@gmail.com
 	name = BoppreH
-[push]
-	default = simple
 [core]
 	excludesfile = /home/boppreh/.gitignore
