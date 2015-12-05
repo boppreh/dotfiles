@@ -15,11 +15,11 @@ sudo $MANAGER -y install jq
 mkdir temp
 cd temp
 
-if ! hash python3 2>/dev/null; then
-    wget https://www.python.org/ftp/python/3.4.3/Python-3.4.3.tar.xz
-    tar -xvf Python-3.4.3.tar.xz
+if ! hash python3.5 2>/dev/null; then
+    wget https://www.python.org/ftp/python/3.5.0/Python-3.5.0.tar.xz
+    tar -xvf Python-3.5.0.tar.xz
 
-    cd Python-3.4.3
+    cd Python-3.5.0
     ./configure && make && sudo make install
     cd ..
 fi
@@ -33,7 +33,7 @@ if ! hash jq 2>/dev/null; then
     cd ..
 fi
 
-if hash startx 2>/dev/null; then
+if hash startx 2>/dev/null && ! grep BCM2709 /proc/cpuinfo; then
     sudo $MANAGER install -y gvim gnome-tweak-tool
 
     if ! hash skype 2>/dev/null; then
