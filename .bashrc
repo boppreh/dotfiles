@@ -94,7 +94,5 @@ export GOPATH=$HOME/go
 export EDITOR=vim
 
 if [ -z "$STY" ]; then
-    if ! hash startx 2>/dev/null; then
-        exec screen -xRRU
-    fi
+    exec screen -xRRU
 fi
