@@ -19,6 +19,9 @@
 
     " Don't flicker my screen or beep my ears, please.
     set visualbell t_vb=
+
+    " "Stop that stupid window from opping up."
+    map q: :q
 " </ VIM >
 
 
@@ -49,6 +52,9 @@
     nnoremap <Leader>l :source ~/session.vim<CR>
     nnoremap <Leader>s :mksession! ~/session.vim<CR>
 
+    " Save session, save files and quit.
+    nnoremap <Leader>z :mksession! ~/.vim_session<CR>:xa<CR>
+
     " Clear search highlights or errors.
     nnoremap <leader><space> :noh<cr>
 
@@ -56,12 +62,21 @@
     " changes.
     nnoremap <Leader>q :qa<CR>
 
-    " Save session, save files and quit.
-    nnoremap <Leader>z :mksession! ~/.vim_session<CR>:xa<CR>
+    " Save everything.
+    nnoremap <Leader>w :wa<CR>
 
-    " Allow inserting blank lines in normal mode without entering insert mode.
-    nnoremap <Leader>o o<ESC>
-    nnoremap <Leader>O O<ESC>
+    " Leader + clipboard command = command using system clipboard.
+    vmap <Leader>y "+y
+    vmap <Leader>d "+d
+    nmap <Leader>p "+p
+    nmap <Leader>P "+P
+    vmap <Leader>p "+p
+    vmap <Leader>P "+P
+
+    " Add an "s" object that means last search result.
+    vnoremap <silent> s //e<C-r>=&selection=='exclusive'?'+1':''<CR><CR>
+        \:<C-u>call histdel('search',-1)<Bar>let @/=histget('search',-1)<CR>gv
+    omap s :normal vs<CR>
 
     " Quick access to make programs.
     nnoremap <Leader>m :make<CR>
@@ -73,11 +88,6 @@
         nnoremap <Leader>V :e ~/.vimrc<CR>
     end
 " </ LEADER MAPS >
-
-
-" < SPELL CHECKING>
-    set spell spelllang=en_us
-" </ SPELL CHECKING
 
 
 " < SAVING >
@@ -108,12 +118,26 @@
     set showmatch
 
     " Autocomplete curly braces.
-    inoremap {      {}<Left>
     inoremap {<CR>  {<CR>}<Esc>O
-    inoremap {{     {
-    inoremap {}     {}
 " </ BRACKETS >
 
+" </ PASTING >
+    " After pasting, navigate to end of pasted item.
+    vnoremap <silent> y y`]
+    vnoremap <silent> p p`]
+    nnoremap <silent> p p`]
+
+    " Make pasting not copy what was replaced.
+    function! RestoreRegister()
+      let @" = s:restore_reg
+      return ''
+    endfunction
+    function! s:Repl()
+      let s:restore_reg = @"
+      return "p@=RestoreRegister()\<cr>"
+    endfunction
+    vmap <silent> <expr> p <sid>Repl()
+" </ PASTING >
 
 " < INDENTATION >
     " Number of spaces in a tab.
@@ -187,7 +211,7 @@
 
     " Limit lines to 79 characters when in insert mode. Lines are automatically
     " broken on first whitespace.
-    set textwidth=79
+    " set textwidth=79
 
     " Automatically format text and comments.
     set formatoptions=tc
@@ -216,6 +240,10 @@
             " Highlights current line. Only in gvim because vim's cursor line
             " is ugly.
             set cursorline
+
+            " Enable spellcheck. On console it just changes the word
+            " background, making it almost impossible to read.
+            set spell spelllang=en_us
 
             " Maximize gvim.
             if has("win32") || has("win64")
