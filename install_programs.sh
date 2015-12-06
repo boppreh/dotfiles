@@ -20,7 +20,8 @@ if ! hash python3.5 2>/dev/null; then
     tar -xvf Python-3.5.0.tar.xz
 
     cd Python-3.5.0
-    ./configure && make && sudo make install
+    sudo $MANAGER install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev
+     ./configure --with-pydebug --with-ensurepip && make && sudo make install
     cd ..
 fi
 
