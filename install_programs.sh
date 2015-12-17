@@ -9,7 +9,7 @@ else
     exit 1
 fi
 sudo $MANAGER update
-sudo $MANAGER -y install screen vim git golang python3
+sudo $MANAGER -y install screen vim git golang python3 imagemagick pandoc moreutils
 sudo $MANAGER -y install jq
 
 mkdir temp
