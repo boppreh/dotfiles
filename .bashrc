@@ -98,3 +98,6 @@ if [ -z "$STY" ]; then
         exec screen -xRRU
     fi
 fi
+if [ -f ~/dotfiles/sensible.bash ]; then
+    source ~/dotfiles/sensible.bash
+fi
