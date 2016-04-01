@@ -34,7 +34,7 @@ font pango:DejaVu Sans Mono 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec gnome-terminal
 
 # lock screen
 bindsym $mod+l exec i3lock -i /home/boppreh/wallpaper.png
