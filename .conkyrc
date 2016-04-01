@@ -45,5 +45,6 @@ TEXT
 {"full_text": "Entropy ${entropy_perc}%", "color": "\#ffffff"},
 {"full_text": "Uptime ${uptime_short}", "color": "\#ffffff"},
 {"full_text": "Net ${upspeed eno1}/s", "color": "\#ffffff"},
+{"full_text": "${if_empty ${exec amixer -c 0 get Master | grep '\[on\]'}}🔇${else}🔉${endif}${exec amixer -c 0 get Master | grep -Po '(?<=\[)\d+(?=%\])'}", "color": "\#ffffff"},
 {"full_text": "${time %Y-%m-%d %H:%M}", "color": "\#ffffff"}
 ],
