@@ -4,6 +4,8 @@ out_to_console yes
 background no
 max_text_width 0
 
+pad_percents 2
+
 # Update interval in seconds
 update_interval 2.0
 
