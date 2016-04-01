@@ -156,5 +156,6 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command $HOME/dotfiles/conky-i3bar
+        position top
         # status_command i3status
 }
