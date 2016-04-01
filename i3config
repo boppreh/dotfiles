@@ -11,8 +11,8 @@
 
 set $mod Mod4
 
-bindsym XF86AudioLowerVolume exec amixer -c 0 set Master 20dB-
-bindsym XF86AudioRaiseVolume exec amixer -c 0 set Master 20dB+
+bindsym XF86AudioLowerVolume exec amixer -c 0 set Master 2dB-
+bindsym XF86AudioRaiseVolume exec amixer -c 0 set Master 2dB+
 bindsym XF86AudioMute exec amixer -q set Master toggle
 
 # Font for window titles. Will also be used by the bar unless a different font
