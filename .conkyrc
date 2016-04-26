@@ -40,10 +40,10 @@ TEXT
 
 [
 {"full_text": "${if_empty ${exec amixer -c 0 get Master | grep '\[on\]'}}🔇${else}🔉${endif}${exec amixer -c 0 get Master | grep -Po '(?<=\[)\d+(?=%\])'}", "color": "\#556270"},
-{"full_text": "Disk ${fs_used_perc /home}% @ ${fs_size /home}b", "color": "\#4ECDC4"},
-{"full_text": "RAM ${memperc}%+${swapperc}% @ ${memmax}b",
+{"full_text": "Disk ${fs_used_perc /home}% @ ${fs_size /home}B", "color": "\#4ECDC4"},
+{"full_text": "RAM ${memperc}% +${swapperc}% @ ${memmax}B",
  "color": ${if_match ${memperc}<90}"\#C7F464"${else}"\#ff0000"${endif}},
-{"full_text": "CPU ${cpu cpu1}%,${cpu cpu2}%,${cpu cpu3}%,${cpu cpu4}% @ ${freq_g}GHz",
+{"full_text": "CPU ${cpu cpu1}%,${cpu cpu2}%,${cpu cpu3}%,${cpu cpu4}% @ ${freq_g}GHz ${exec sensors -u | grep -Po "(?<=temp1_input: )\d+"}°C",
  "color": ${if_match ${memperc}<90}"\#FF6B6B"${else}"\#ff0000"${endif}},
 {"full_text": "Net ${upspeed eno1}/s @ ${addr eno1}", "color": "\#C44D58"},
 {"full_text": "${uptime_short} @ ${time %Y-%m-%d %H:%M}", "color": "\#CCCCCC"}
