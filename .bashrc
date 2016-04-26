@@ -93,7 +93,7 @@ export GOPATH=$HOME/go
 
 export EDITOR=vim
 
-if [ -z "$STY" ]; then
+if [ -z "$DESKTOP_SESSION" ] && [ -z "$STY" ]; then
     exec screen -xRRU
 fi
 if [ -f ~/dotfiles/sensible.bash ]; then
