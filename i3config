@@ -176,3 +176,5 @@ mode "Exit (L)ogout, (R)eboot, (P)oweroff" {
 }
 
 bindsym $mod+Shift+e mode "Exit (L)ogout, (R)eboot, (P)oweroff"
+
+new_window none
